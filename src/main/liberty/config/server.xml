@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="OpenLiberty Microprofile Server">
+    <featureManager>
+        <!--feature>microProfile-1.0</feature-->
+        <!--feature>cdi-2.0</feature-->
+        <!--feature>jaxrs-3.0</feature-->
+        <feature>restfulWS-3.0</feature>
+        <!--feature>localConnector-1.0</feature-->
+        <!--feature>servlet-4.0</feature-->
+    </featureManager>
+    <!--executor name="LargeThreadPool" id="default" coreThreads="4" maxThreads="4"/-->
+    <!--executor name="LargeThreadPool" id="default" coreThreads="8"  maxThreads="8"/-->
+    <!--httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9444"-->
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080">
+      <httpOptions maxKeepAliveRequests="-1" />
+      <!--accessLogging filepath="${server.output.dir}/logs/access.log" maxFileSize="250" maxFiles="4" logFormat="%h %i %u %t &quot;%r&quot; %s %b %D %{R}W" /-->
+    </httpEndpoint>
+    <cdi12 enableImplicitBeanArchives="false"/>
+    <!--webContainer disableXPoweredBy="true"/-->
+    <webApplication contextRoot="pingperf" location="pingperf.war" deferServletLoad="false" />
+        <!--traceSpecification="com.ibm.ws.injectionengine.AbstractInjectionEngine=all=disabled:com.ibm.ws.injectionengine.InjectionProcessorManager=all=disabled:com.ibm.wsspi.injectionengine.InjectionBinding=all=disabled:OSGi.Debug=all:org.eclipse.osgi.internal.loader.ModuleClassLoader=all=enabled"-->
+        <!--traceSpecification="*=info:com.ibm.ws.webcontainer*=all=enabled:webcontainer=all=enabled"-->
+        <!--traceSpecification="*=info:com.ibm.ws.webcontainer.webapp*=all=enabled:webcontainer=all=enabled:com.ibm.ws.webcontainer.srt*=all=enabled"-->
+        <!--traceSpecification="*=info"-->
+        <!--traceSpecification="*=info:io.openliberty.checkpoint.*=all=enabled:com.ibm.ws.*=all=enabled:com.ibm.ws.app.manager.*=all=disabled:logging=all=disabled:instrumentation=all=disabled"-->
+        <!--traceSpecification="*=info:io.openliberty.*=all=enabled:io.openliberty.checkpoint.*=all=enabled:config=all=disabled:featureManager=all=disabled"-->
+    <!--traceSpecification="*=info:io.openliberty.checkpoint.*=all:com.ibm.ws.kernel.service.util.*=all:com.ibm.ws.threading.internal.*=all"-->
+        <!--logging
+                traceSpecification="*=info:"
+                traceFileName="trace.log"
+                maxFileSize="2000"
+                maxFiles="10"
+                traceFormat="BASIC"
+                /-->
+    <!--applicationManager autoExpand="true"/-->
+</server>
