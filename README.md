@@ -2,6 +2,8 @@
 
 
 ## Building Semeru Images
+First, insert the security token into the .env file. (You can ask me for it).
+
 ```
 ./build.semeru.sh
 ```
