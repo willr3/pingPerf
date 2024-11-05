@@ -9,6 +9,8 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 
+import io.smallrye.common.annotation.NonBlocking;
+
 @Path("ping")
 public class PingResource {
   private static final String template = "Hello, %s!";
@@ -19,6 +21,7 @@ public class PingResource {
   @GET
   @Produces({"text/plain"})
   @Path("simple")
+  @NonBlocking
   public Response getSimple() {
     return Response.ok().build();
   }
@@ -26,6 +29,7 @@ public class PingResource {
   @GET
   @Produces({"text/plain"})
   @Path("hello")
+  @NonBlocking
   public String hello() {
     return "helloJ";
   }
@@ -33,6 +37,7 @@ public class PingResource {
   @GET
   @Path("greeting")
   @Produces({"text/plain"})
+  @NonBlocking
   public String greeting(@QueryParam("name") String name) {
     //System.out.println((new SimpleDateFormat("HH:mm:ss.SSS")).format(new Date(System.currentTimeMillis())));
     String suffix = (name != null) ? name : "World";
