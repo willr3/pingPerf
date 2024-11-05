@@ -71,8 +71,9 @@ summariser.log=true
 summariser.out=true
 ```
 
-### Copy the scripts in jmeter-scripts to this machine.
-### The getFootprint.sh needs to access the System Under Test without needing a password. So allow that or comment it out of the run_pingPerf.sh script.
+### Copy the scripts in jmeter-scripts to the driver.
+
+### The getFootprint.sh script gets the footprint measurement after heavy load. This script needs to access (ssh) the System Under Test without needing a password. So you will need to allow that (or comment it out of the run_pingPerf.sh script).
 
 ### Run Jmeter
 ```
@@ -81,5 +82,10 @@ summariser.out=true
 Example:
 ```
 ./run_pingPerf.sh /opt/apache-jmeter-5.6.3 checkers06.rtp.raleigh.ibm.com
+```
+
+The throughput measurement is the summary number of the last 5:00 run. (17600.3 below)
+```
+summary = 3159447 in 00:05:00 = 17600.3/s Avg:     5 Min:     0 Max:    70 Err:     0 (0.00%)
 ```
 
