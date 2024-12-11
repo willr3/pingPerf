@@ -22,4 +22,4 @@ RUN chmod 775 /work /work/application \
 EXPOSE 9080
 USER 1001
 
-CMD ["./application", "-Xmx128m","-Dquarkus.thread-pool.max-threads=4","-Dquarkus.thread-pool.core-threads=4","-Dquarkus.http.host=0.0.0.0","-Dquarkus.http.port=9090","-Djava.util.logging.manager=org.jboss.logmanager.LogManager"]
+CMD ["./application", "-Xmx128m","-Dquarkus.thread-pool.max-threads=8","-Dquarkus.thread-pool.core-threads=8","-Dquarkus.http.host=0.0.0.0","-Dquarkus.http.port=9090","-Djava.util.logging.manager=org.jboss.logmanager.LogManager"]
