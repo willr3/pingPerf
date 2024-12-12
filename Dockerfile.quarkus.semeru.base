@@ -90,7 +90,7 @@ RUN set -eux; \
          ;; \
        amd64|x86_64) \
          ESUM='4506af49e4d297c72a0f232614431cf84ef13991bf32e43e7378df87cf276cbf'; \
-         BINARY_URL='https://openj9-artifactory.osuosl.org/artifactory/ci-openj9/Build_JDK17_x86-64_linux_Nightly/862/OpenJ9-JDK17-x86-64_linux-20241030-231010.tar.gz';\
+         BINARY_URL='https://openj9-artifactory.osuosl.org/artifactory/ci-openj9/Build_JDK17_x86-64_linux_Nightly/892/OpenJ9-JDK17-x86-64_linux-20241212-001148.tar.gz';\
          ;; \
        ppc64el|ppc64le) \
          ESUM='199ebb735633e083d595269736589ba15aee0e5bd2b2a87e5b74d8da387f23b9'; \
