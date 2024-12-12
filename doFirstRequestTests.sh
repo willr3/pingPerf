@@ -5,17 +5,23 @@ declare -r IMAGE=${1}
 
 echo "Testing ${IMAGE}"
 
-if [[ ${2} == 1 ]] 
-then
+if [ $# -gt 2 ] && [ "x${3}x" != "xx" ]; then
+  CPUS=${3}
+elif [[ ${2} == 1 ]]; then
   CPUS="2"
 else
   LAST_CPU=$((2 + ${2} -1 ))
   CPUS="2-${LAST_CPU}"	
 fi
 
-echo "CPUS=${CPUS}"
+COUNT=10
+if [ $# -gt 3 ]; then
+  COUNT=${4}
+fi
 
-for i in 1 2 3 4 5 6 7 8 9 10
+echo "CPUS=${CPUS} COUNT=${COUNT}"
+
+for i in $(seq 1 ${COUNT})
 do
   sleep 2
 
